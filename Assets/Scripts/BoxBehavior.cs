@@ -11,16 +11,21 @@ public class BoxBehavior : MonoBehaviour
 	private GameObject prefab_to_instatiate;
 	private RaycastHit hit;
 
+
 	// Use this for initialization
 	void Start ()
 	{
-		atom_held = false;
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
 
+	}
+
+	// On click, instantiate a new atom depending on the box that was clicked
+	void OnMouseDown()
+	{
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 		if(Physics.Raycast(ray, out hit, Camera.main.farClipPlane))
 		{
@@ -32,30 +37,25 @@ public class BoxBehavior : MonoBehaviour
 				prefab_to_instatiate = hydrogenPrefab;
 		}
 
-	}
-
-
-	void OnMouseDown()
-	{
 		clone = (GameObject)Instantiate(prefab_to_instatiate, hit.point, Quaternion.identity);
 	}
 
+	// While the mouse is held, move the atom to where it should be placed.
+	// Turn off rigidbody while doing so because otherwise, the physics engine updating
+	// gets pretty crazy (disabling rigidbody by turning on/off isKinematic respectively)
 	void OnMouseDrag()
 	{
-		// Code to make an atom follow the mouse cursor
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		clone.GetComponent<Rigidbody>().isKinematic = true;
+		Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
 
 		RaycastHit hit2;
-		if(Physics.Raycast(ray, out hit2, Camera.main.farClipPlane))
+		if(Physics.Raycast(ray2, out hit2, Camera.main.farClipPlane))
 		{
-			float oldY = transform.position.y;
+			float oldY = clone.transform.position.y;
 			clone.transform.position = new Vector3(hit2.point.x, oldY, hit2.point.z);
 		}
-	}
-	void OnMouseUp()
-	{
-		// Debug.Log("Mouse released");
-		// clone.GetComponent<Rigidbody>().velocity = Vector3.zero;
+		clone.GetComponent<Rigidbody>().isKinematic = false;
+
 	}
 
 }

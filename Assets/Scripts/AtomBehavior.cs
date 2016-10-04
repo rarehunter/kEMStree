@@ -3,6 +3,9 @@ using System.Collections;
 
 public class AtomBehavior : MonoBehaviour
 {
+	private float distance = 10;
+
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -15,40 +18,29 @@ public class AtomBehavior : MonoBehaviour
 
 	}
 
-	// void OnTriggerEnter(Collider other)
-	// {
-	// 	if(other.gameObject.name == "OxygenPrefab(Clone)")
-	// 	{
-	// 		other.gameObject.transform.parent = gameObject.transform;
-	// 	}
-	// }
-
 	void OnCollisionEnter(Collision collision)
 	{
-		if(collision.gameObject.name == "OxygenPrefab(Clone)")
-		{
-			collision.gameObject.transform.parent = gameObject.transform;
-		}
+		// if(collision.gameObject.name == "OxygenPrefab(Clone)")
+		// {
+		// 	collision.gameObject.transform.parent = gameObject.transform;
+		// }
 	}
 
+	// Drag the atom around the desk
+	// Turn off rigidbody while doing so because otherwise, the physics engine updating
+	// gets pretty crazy (disabling rigidbody by turning on/off isKinematic respectively)
 	void OnMouseDrag()
 	{
-		// Code to make an atom follow the mouse cursor
+		this.GetComponent<Rigidbody>().isKinematic = true;
 		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
 		RaycastHit hit;
 		if(Physics.Raycast(ray, out hit, Camera.main.farClipPlane))
 		{
-			float oldY = transform.position.y;
+			float oldY = this.transform.position.y;
 			this.transform.position = new Vector3(hit.point.x, oldY, hit.point.z);
 		}
-
+		this.GetComponent<Rigidbody>().isKinematic = false;
 	}
-
-	// void OnMouseUp()
-	// {
-	// 	Debug.Log("Mouse released");
-	// 	this.GetComponent<Rigidbody>().velocity = Vector3.zero;
-	// }
 
 }
