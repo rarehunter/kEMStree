@@ -16,9 +16,6 @@ public class StartButton : MonoBehaviour
 	{
         elem = GameObject.Find("Elements");
         elem.SetActive(false);
-
-        // addButtons = GameObject.Find("AddButtons");
-        //addButtons.SetActive(false);
 	}
 
 	// Update is called once per frame
@@ -39,7 +36,5 @@ public class StartButton : MonoBehaviour
         starttext.enabled = false;
 
         elem.SetActive(true);
-        // addButtons.SetActive(true);
-
     }
 }

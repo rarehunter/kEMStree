@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F0543A03-99B3-2497-70AE-FB983E17B824}</ProjectGuid>
+    <ProjectGuid>{F1601250-77F8-1883-742C-132C8C4B933F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
@@ -292,11 +292,11 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="LeapCSharp.NET3.5">
- <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/EMS Hello World/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
- </Reference>
  <Reference Include="Google.ProtocolBuffers">
- <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/EMS Hello World/Assets/Plugins/Google.ProtocolBuffers.dll</HintPath>
+ <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/kEMStree/Assets/Plugins/Google.ProtocolBuffers.dll</HintPath>
+ </Reference>
+ <Reference Include="LeapCSharp.NET3.5">
+ <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/kEMStree/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

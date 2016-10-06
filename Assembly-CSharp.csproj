@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6447270C-59ED-C0A8-2A47-22F164005B42}</ProjectGuid>
+    <ProjectGuid>{7DBA0DD5-6004-4F2E-2292-8987B35D9201}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -228,11 +228,8 @@
      <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\Scripts\AtomBehavior.cs" />
-     <Compile Include="Assets\Scripts\BallMove.cs" />
      <Compile Include="Assets\Scripts\BoxBehavior.cs" />
      <Compile Include="Assets\Scripts\ChemistryController.cs" />
-     <Compile Include="Assets\Scripts\CollisionDetect.cs" />
-     <Compile Include="Assets\Scripts\DragBody.cs" />
      <Compile Include="Assets\Scripts\OxygenCollider.cs" />
      <Compile Include="Assets\Scripts\StartButton.cs" />
      <Compile Include="Assets\Scripts\openEMSstim.cs" />
@@ -352,16 +349,16 @@
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
- <Reference Include="LeapCSharp.NET3.5">
- <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/EMS Hello World/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
- </Reference>
  <Reference Include="Google.ProtocolBuffers">
- <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/EMS Hello World/Assets/Plugins/Google.ProtocolBuffers.dll</HintPath>
+ <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/kEMStree/Assets/Plugins/Google.ProtocolBuffers.dll</HintPath>
+ </Reference>
+ <Reference Include="LeapCSharp.NET3.5">
+ <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/kEMStree/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{F0543A03-99B3-2497-70AE-FB983E17B824}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{F1601250-77F8-1883-742C-132C8C4B933F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

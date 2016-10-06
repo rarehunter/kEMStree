@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 
 public class ChemistryController : MonoBehaviour
@@ -8,17 +9,18 @@ public class ChemistryController : MonoBehaviour
 	private Text hintText;
 	private Text subscriptText;
 	private Text goalText;
-	private GameObject nextBuildButton;
+	private GameObject returnButton;
 
 	private string[] molecules_text;
 	private string[] molecules_chem;
 
 	private int current_level;
-	private int max_level = 5; // Level 5 is the last level
+	public static int success; // set by 'CheckSolution' if the molecule is successfully constructed
 
 	void Start ()
 	{
 		current_level = 1; // Start at Level 1
+		success = 0;
 
 		// build arrays
 		molecules_text = new string[] {"water", "carbon dioxide", "salt", "ozone", "bleach"};
@@ -28,12 +30,12 @@ public class ChemistryController : MonoBehaviour
 		congratsText = GameObject.Find("CongratsText").GetComponent<Text>();
 		hintText = GameObject.Find("HintText").GetComponent<Text>();
 		goalText = GameObject.Find("GoalText").GetComponent<Text>();
-		nextBuildButton = GameObject.Find("NextButton");
+		returnButton = GameObject.Find("ReturnButton");
 
 		// hide stuff
 		congratsText.enabled = false;
 		hintText.enabled = false;
-		nextBuildButton.SetActive(false);
+		returnButton.SetActive(false);
 
 		// show what molecule to build
 		goalText.text = molecules_text[current_level-1];
@@ -43,7 +45,11 @@ public class ChemistryController : MonoBehaviour
 
 	void Update ()
 	{
-
+		if(Convert.ToBoolean(success))
+		{
+			congratsText.enabled = true;
+			returnButton.SetActive(true);
+		}
 	}
 
 	public void HintButtonClick()
@@ -59,6 +65,34 @@ public class ChemistryController : MonoBehaviour
 	public void CheckSolution()
 	{
 		Debug.Log("Checking solution...");
+
+		success = CheckSolutionHelper();
+	}
+
+	public int CheckSolutionHelper()
+	{
+		GameObject go;
+		if(current_level == 1) // Checking solution for H2O level
+		{
+			// Make sure that oxygen exists and that it has two hydrogen children
+			if((go = GameObject.Find("OxygenPrefab(Clone)")) != null && go.transform.childCount == 2)
+			{
+				foreach (Transform child in go.transform)
+				{
+					if(child.gameObject.name != "HydrogenPrefab(Clone)")
+						return 0; //if child is not just hydrogen, fail
+				}
+				return 1; //otherwise, success
+			}
+			else // if oxygen doesn't exist or it doesn't have exactly two children, fail
+			{
+				return 0;
+			}
+		}
+		else // add more levels here
+		{
+			return 0;
+		}
 	}
 
 

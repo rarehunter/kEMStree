@@ -3,9 +3,6 @@ using System.Collections;
 
 public class AtomBehavior : MonoBehaviour
 {
-	private float distance = 10;
-
-
 	// Use this for initialization
 	void Start ()
 	{
@@ -16,14 +13,6 @@ public class AtomBehavior : MonoBehaviour
 	void Update ()
 	{
 
-	}
-
-	void OnCollisionEnter(Collision collision)
-	{
-		// if(collision.gameObject.name == "OxygenPrefab(Clone)")
-		// {
-		// 	collision.gameObject.transform.parent = gameObject.transform;
-		// }
 	}
 
 	// Drag the atom around the desk

@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{F7513B98-5242-5DE3-22D5-34703A1D5B49}</ProjectGuid>
+    <ProjectGuid>{D46B29F7-610C-33D6-7302-A4ECCEF53954}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -210,6 +210,12 @@
  <Reference Include="UnityEditor.TreeEditor">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
+ <Reference Include="Google.ProtocolBuffers">
+ <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/kEMStree/Assets/Plugins/Google.ProtocolBuffers.dll</HintPath>
+ </Reference>
+ <Reference Include="LeapCSharp.NET3.5">
+ <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/kEMStree/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Graphs">
  <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
@@ -228,18 +234,12 @@
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>/Applications/Unity/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
  </Reference>
- <Reference Include="LeapCSharp.NET3.5">
- <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/EMS Hello World/Assets/Plugins/LeapCSharp.NET3.5.dll</HintPath>
- </Reference>
- <Reference Include="Google.ProtocolBuffers">
- <HintPath>/Users/samuel/Dropbox/Documents/School Work/Georgia Tech/Second Year/UIST 2016/EMS Hello World/Assets/Plugins/Google.ProtocolBuffers.dll</HintPath>
- </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{F0543A03-99B3-2497-70AE-FB983E17B824}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{F1601250-77F8-1883-742C-132C8C4B933F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{6447270C-59ED-C0A8-2A47-22F164005B42}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{7DBA0DD5-6004-4F2E-2292-8987B35D9201}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

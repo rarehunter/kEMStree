@@ -5,7 +5,10 @@ public class BoxBehavior : MonoBehaviour
 {
 	public GameObject oxygenPrefab;
 	public GameObject hydrogenPrefab;
-	public static bool atom_held;
+	public GameObject carbonPrefab;
+	public GameObject sodiumPrefab;
+	public GameObject chlorinePrefab;
+
 	private GameObject clone;
 
 	private GameObject prefab_to_instatiate;
@@ -35,6 +38,13 @@ public class BoxBehavior : MonoBehaviour
 				prefab_to_instatiate = oxygenPrefab;
 			if(go_name == "HydrogenBox")
 				prefab_to_instatiate = hydrogenPrefab;
+			if(go_name == "CarbonBox")
+				prefab_to_instatiate = carbonPrefab;
+			if(go_name == "SodiumBox")
+				prefab_to_instatiate = sodiumPrefab;
+			if(go_name == "ChlorineBox")
+				prefab_to_instatiate = chlorinePrefab;
+
 		}
 
 		clone = (GameObject)Instantiate(prefab_to_instatiate, hit.point, Quaternion.identity);
