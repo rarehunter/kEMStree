@@ -23,12 +23,17 @@ public class OxygenCollider : MonoBehaviour
 		GameObject atom_entering = collision.gameObject;
 		GameObject this_atom = this.gameObject;
 
-		if(atom_entering.name == "HydrogenPrefab(Clone)" && num_hydrogens < max_hydrogens)
+		bool hydrogen_connected = false;
+
+		// Test if it is hydrogen that is coming in and check whether or not it already has a connection
+		if(atom_entering.GetComponent<HydrogenCollider>() != null)
+			hydrogen_connected = atom_entering.GetComponent<HydrogenCollider>().getConnectedStatus();
+
+		if(atom_entering.name == "HydrogenPrefab(Clone)" && num_hydrogens < max_hydrogens && !hydrogen_connected)
 		{
-			// Vector3 fta = 10 * Vector3.up;
-			// Debug.Log(fta);
-			//
-			// atom_entering.GetComponent<Rigidbody>().AddForce(fta, ForceMode.Impulse);
+			// atom_entering.GetComponent<Rigidbody>().MovePosition(this_atom.transform.position + (atom_entering.transform.position - this_atom.transform.position));
+			// atom_entering.GetComponent<Rigidbody>().AddForce(this_atom.transform.position, ForceMode.Acceleration);
+			//GameObject.Find("Sphere2").GetComponent<Rigidbody>().AddForce(this_atom.transform.position, ForceMode.Impulse);
 
 			// First, make the hydrogen a child of this oxygen atom.
 			// Next, create a Fixed Joint component on the hydrogen and stick it to the oxygen
@@ -36,6 +41,12 @@ public class OxygenCollider : MonoBehaviour
 			atom_entering.AddComponent<FixedJoint>();
             atom_entering.GetComponent<FixedJoint>().connectedBody = this_atom.GetComponent<Rigidbody>();
 
+			atom_entering.GetComponent<HydrogenCollider>().setConnectedStatus(true);
+
+			// Play the electrical "buzz" sound
+			GetComponent<AudioSource>().Play();
+
+			// Increment the number of hydrogens connected to the oxygen
 			num_hydrogens += 1;
 
 		}

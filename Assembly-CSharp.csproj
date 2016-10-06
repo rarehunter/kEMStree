@@ -230,6 +230,7 @@
      <Compile Include="Assets\Scripts\AtomBehavior.cs" />
      <Compile Include="Assets\Scripts\BoxBehavior.cs" />
      <Compile Include="Assets\Scripts\ChemistryController.cs" />
+     <Compile Include="Assets\Scripts\HydrogenCollider.cs" />
      <Compile Include="Assets\Scripts\OxygenCollider.cs" />
      <Compile Include="Assets\Scripts\StartButton.cs" />
      <Compile Include="Assets\Scripts\openEMSstim.cs" />
