@@ -31,6 +31,10 @@ public class OxygenCollider : MonoBehaviour
 
 		if(atom_entering.name == "HydrogenPrefab(Clone)" && num_hydrogens < max_hydrogens && !hydrogen_connected)
 		{
+			// atom_entering.GetComponent<SphereCollider>().radius = 0.3f;
+			// this_atom.GetComponent<SphereCollider>().radius = 0.3f;
+
+			// atom_entering.transform.position = Vector3.MoveTowards(atom_entering.transform.position, this_atom.transform.position, 5*Time.deltaTime);
 			// atom_entering.GetComponent<Rigidbody>().MovePosition(this_atom.transform.position + (atom_entering.transform.position - this_atom.transform.position));
 			// atom_entering.GetComponent<Rigidbody>().AddForce(this_atom.transform.position, ForceMode.Acceleration);
 			//GameObject.Find("Sphere2").GetComponent<Rigidbody>().AddForce(this_atom.transform.position, ForceMode.Impulse);

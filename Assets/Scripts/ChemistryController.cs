@@ -22,6 +22,10 @@ public class ChemistryController : MonoBehaviour
 		current_level = 1; // Start at Level 1
 		success = 0;
 
+		// Play background music
+		GetComponent<AudioSource>().Play();
+
+
 		// build arrays
 		molecules_text = new string[] {"water", "carbon dioxide", "salt", "ozone", "bleach"};
 		molecules_chem = new string[] {"H2O", "CO2", "NaCl", "O3", "NaOCl"};
@@ -45,6 +49,8 @@ public class ChemistryController : MonoBehaviour
 
 	void Update ()
 	{
+		// If the CheckSolutionHelper function sets the 'success' variable,
+		// then show the "Success" message and return button.
 		if(Convert.ToBoolean(success))
 		{
 			congratsText.enabled = true;
